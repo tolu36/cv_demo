@@ -1,0 +1,8 @@
+path: C:/Users/Tolu/Documents/vs_code/cv_demo/at-it6/data
+train: images/train
+val: images/val
+names:
+  0: Defender X,Y Pos
+  1: QB
+  2: Ball
+  3: Receiver

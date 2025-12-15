@@ -1,0 +1,5 @@
+path: C:/Users/Tolu/Documents/vs_code/cv_demo/at-it6/ball_crops_aug
+train: images/train
+val: images/val
+names:
+  0: Ball

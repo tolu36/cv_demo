@@ -1,0 +1,7 @@
+names:
+  0: Defender X,Y Pos
+  1: QB
+  2: Ball
+  3: Receiver
+path: .
+train: train.txt

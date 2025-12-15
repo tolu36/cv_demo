@@ -1,0 +1,52 @@
+# Byte-compiled / cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Environments
+.env
+.venv/
+venv/
+env/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Project data and generated outputs (keep repo small)
+at-it6/data/
+demo/runs/
+demo/pred_vis/
+demo/pred_vis_combo/
+pred_vis/
+pred_vis_combo/
+
+# Model weights / checkpoints / archives
+*.pt
+*.pth
+*.onnx
+*.ckpt
+*.bin
+*.npz
+*.zip
+*.rar
+*.7z
+*.txt
+
+# Images and large blobs (optional: keep sample images elsewhere)
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.npy
+*.cache
+
+
+# Logs and temp
+*.log
+*.tmp
+*.bak

@@ -1,0 +1,488 @@
+split,image,label,image_action,label_action,dropped
+val,frame_000557 (2).png,frame_000557 (2).txt,moved,moved,0
+val,frame_000140.png,frame_000140.txt,moved,moved,0
+val,frame_001494 (2).png,frame_001494 (2).txt,moved,moved,0
+val,frame_002020.png,frame_002020.txt,moved,moved,0
+val,frame_001374.png,frame_001374.txt,moved,moved,0
+val,frame_000411 (2).png,frame_000411 (2).txt,moved,moved,0
+val,frame_000072.png,frame_000072.txt,moved,moved,0
+val,frame_001687.png,frame_001687.txt,moved,moved,0
+val,frame_000217 (2).png,frame_000217 (2).txt,moved,moved,0
+val,frame_001563.png,frame_001563.txt,moved,moved,0
+val,frame_002014 (2).png,frame_002014 (2).txt,moved,moved,0
+val,frame_001090 (2).png,frame_001090 (2).txt,moved,moved,0
+val,frame_001369.png,frame_001369.txt,moved,moved,0
+val,frame_002167.png,frame_002167.txt,moved,moved,0
+val,frame_000484.png,frame_000484.txt,moved,moved,0
+val,frame_000723 (2).png,frame_000723 (2).txt,moved,moved,0
+val,frame_001237.png,frame_001237.txt,moved,moved,0
+val,frame_001580.png,frame_001580.txt,moved,moved,0
+val,frame_000420.png,frame_000420.txt,moved,moved,0
+val,frame_000359.png,frame_000359.txt,moved,moved,0
+val,frame_000562 (2).png,frame_000562 (2).txt,moved,moved,0
+val,frame_000111.png,frame_000111.txt,moved,moved,0
+val,frame_001838.png,frame_001838.txt,moved,moved,0
+val,frame_002487.png,frame_002487.txt,moved,moved,0
+val,frame_000699.png,frame_000699.txt,moved,moved,0
+val,frame_001943.png,frame_001943.txt,moved,moved,0
+val,frame_001159 (2).png,frame_001159 (2).txt,moved,moved,0
+val,frame_001618.png,frame_001618.txt,moved,moved,0
+val,frame_002582.png,frame_002582.txt,moved,moved,0
+val,frame_002570.png,frame_002570.txt,moved,moved,0
+val,frame_001979.png,frame_001979.txt,moved,moved,0
+val,frame_002004 (2).png,frame_002004 (2).txt,moved,moved,0
+val,frame_001700.png,frame_001700.txt,moved,moved,0
+val,frame_002006 (2).png,frame_002006 (2).txt,moved,moved,0
+val,frame_000831.png,frame_000831.txt,moved,moved,0
+val,frame_000781.png,frame_000781.txt,moved,moved,0
+val,frame_000536.png,frame_000536.txt,moved,moved,0
+val,frame_000207 (2).png,frame_000207 (2).txt,moved,moved,0
+val,frame_001725 (2).png,frame_001725 (2).txt,moved,moved,0
+val,frame_002230.png,frame_002230.txt,moved,moved,0
+val,frame_001820.png,frame_001820.txt,moved,moved,0
+val,frame_001998 (2).png,frame_001998 (2).txt,moved,moved,0
+val,frame_002103.png,frame_002103.txt,moved,moved,0
+val,frame_000327.png,frame_000327.txt,moved,moved,0
+val,frame_000158.png,frame_000158.txt,moved,moved,0
+val,frame_000497 (2).png,frame_000497 (2).txt,moved,moved,0
+val,frame_000115 (2).png,frame_000115 (2).txt,moved,moved,0
+val,frame_001068 (2).png,frame_001068 (2).txt,moved,moved,0
+val,frame_002377.png,frame_002377.txt,moved,moved,0
+val,frame_000142 (2).png,frame_000142 (2).txt,moved,moved,0
+val,frame_001157 (2).png,frame_001157 (2).txt,moved,moved,0
+val,frame_002032.png,frame_002032.txt,moved,moved,0
+val,frame_000106 (2).png,frame_000106 (2).txt,moved,moved,0
+val,frame_000713 (2).png,frame_000713 (2).txt,moved,moved,0
+val,frame_000486.png,frame_000486.txt,moved,moved,0
+val,frame_002715.png,frame_002715.txt,moved,moved,0
+val,frame_000925.png,frame_000925.txt,moved,moved,0
+val,frame_002292.png,frame_002292.txt,moved,moved,0
+val,frame_000229 (2).png,frame_000229 (2).txt,moved,moved,0
+val,frame_002400.png,frame_002400.txt,moved,moved,0
+val,frame_001578.png,frame_001578.txt,moved,moved,0
+val,frame_000006.png,frame_000006.txt,moved,moved,0
+val,frame_002264.png,frame_002264.txt,moved,moved,0
+val,frame_001439.png,frame_001439.txt,moved,moved,0
+val,frame_002193.png,frame_002193.txt,moved,moved,0
+val,frame_000218 (2).png,frame_000218 (2).txt,moved,moved,0
+val,frame_002699.png,frame_002699.txt,moved,moved,0
+val,frame_001162 (2).png,frame_001162 (2).txt,moved,moved,0
+val,frame_002049.png,frame_002049.txt,moved,moved,0
+val,frame_001355.png,frame_001355.txt,moved,moved,0
+val,frame_000374.png,frame_000374.txt,moved,moved,0
+val,frame_001233.png,frame_001233.txt,moved,moved,0
+val,frame_001269.png,frame_001269.txt,moved,moved,0
+val,frame_001718 (2).png,frame_001718 (2).txt,moved,moved,0
+val,frame_000776.png,frame_000776.txt,moved,moved,0
+val,frame_002590.png,frame_002590.txt,moved,moved,0
+val,frame_001744.png,frame_001744.txt,moved,moved,0
+val,frame_002091.png,frame_002091.txt,moved,moved,0
+val,frame_001225.png,frame_001225.txt,moved,moved,0
+val,frame_002461.png,frame_002461.txt,moved,moved,0
+val,frame_000397 (2).png,frame_000397 (2).txt,moved,moved,0
+val,frame_001202 (2).png,frame_001202 (2).txt,moved,moved,0
+val,frame_000010.png,frame_000010.txt,moved,moved,0
+val,frame_000827.png,frame_000827.txt,moved,moved,0
+val,frame_000142.png,frame_000142.txt,moved,moved,0
+val,frame_002644.png,frame_002644.txt,moved,moved,0
+val,frame_000501.png,frame_000501.txt,moved,moved,0
+val,frame_001071.png,frame_001071.txt,moved,moved,0
+val,frame_000372 (2).png,frame_000372 (2).txt,moved,moved,0
+val,frame_001843 (2).png,frame_001843 (2).txt,moved,moved,0
+val,frame_001590.png,frame_001590.txt,moved,moved,0
+val,frame_001975.png,frame_001975.txt,moved,moved,0
+val,frame_001012 (2).png,frame_001012 (2).txt,moved,moved,0
+val,frame_000770.png,frame_000770.txt,moved,moved,0
+val,frame_002508.png,frame_002508.txt,moved,moved,0
+val,frame_001084.png,frame_001084.txt,moved,moved,0
+val,frame_000815.png,frame_000815.txt,moved,moved,0
+val,frame_000354 (2).png,frame_000354 (2).txt,moved,moved,0
+val,frame_000340.png,frame_000340.txt,moved,moved,0
+val,frame_001164.png,frame_001164.txt,moved,moved,0
+val,frame_001756.png,frame_001756.txt,moved,moved,0
+val,frame_000740.png,frame_000740.txt,moved,moved,0
+val,frame_001583 (2).png,frame_001583 (2).txt,moved,moved,0
+val,frame_000953 (2).png,frame_000953 (2).txt,moved,moved,0
+val,frame_002251.png,frame_002251.txt,moved,moved,0
+val,frame_002170.png,frame_002170.txt,moved,moved,0
+val,frame_001001.png,frame_001001.txt,moved,moved,0
+val,frame_000076 (2).png,frame_000076 (2).txt,moved,moved,0
+val,frame_000018.png,frame_000018.txt,moved,moved,0
+val,frame_002545.png,frame_002545.txt,moved,moved,0
+val,frame_000846.png,frame_000846.txt,moved,moved,0
+val,frame_000417 (2).png,frame_000417 (2).txt,moved,moved,0
+val,frame_000222 (2).png,frame_000222 (2).txt,moved,moved,0
+val,frame_001721 (2).png,frame_001721 (2).txt,moved,moved,0
+val,frame_001345.png,frame_001345.txt,moved,moved,0
+val,frame_001999 (2).png,frame_001999 (2).txt,moved,moved,0
+val,frame_000225.png,frame_000225.txt,moved,moved,0
+val,frame_002499.png,frame_002499.txt,moved,moved,0
+val,frame_001055.png,frame_001055.txt,moved,moved,0
+val,frame_001348.png,frame_001348.txt,moved,moved,0
+val,frame_001821.png,frame_001821.txt,moved,moved,0
+val,frame_001597.png,frame_001597.txt,moved,moved,0
+val,frame_000487.png,frame_000487.txt,moved,moved,0
+val,frame_000994 (2).png,frame_000994 (2).txt,moved,moved,0
+val,frame_000963 (2).png,frame_000963 (2).txt,moved,moved,0
+val,frame_001814.png,frame_001814.txt,moved,moved,0
+val,frame_001552.png,frame_001552.txt,moved,moved,0
+val,frame_001064.png,frame_001064.txt,moved,moved,0
+val,frame_001360.png,frame_001360.txt,moved,moved,0
+val,frame_001760.png,frame_001760.txt,moved,moved,0
+val,frame_001303.png,frame_001303.txt,moved,moved,0
+val,frame_000135 (2).png,frame_000135 (2).txt,moved,moved,0
+val,frame_000251.png,frame_000251.txt,moved,moved,0
+val,frame_001487.png,frame_001487.txt,moved,moved,0
+val,frame_001471 (2).png,frame_001471 (2).txt,moved,moved,0
+val,frame_001620.png,frame_001620.txt,moved,moved,0
+val,frame_002083.png,frame_002083.txt,moved,moved,0
+val,frame_002133.png,frame_002133.txt,moved,moved,0
+val,frame_002413.png,frame_002413.txt,moved,moved,0
+val,frame_001418.png,frame_001418.txt,moved,moved,0
+val,frame_001992 (2).png,frame_001992 (2).txt,moved,moved,0
+val,frame_001634 (2).png,frame_001634 (2).txt,moved,moved,0
+val,frame_002558.png,frame_002558.txt,moved,moved,0
+val,frame_000893 (2).png,frame_000893 (2).txt,moved,moved,0
+val,frame_002673.png,frame_002673.txt,moved,moved,0
+val,frame_001574 (2).png,frame_001574 (2).txt,moved,moved,0
+val,frame_000270.png,frame_000270.txt,moved,moved,0
+val,frame_001749.png,frame_001749.txt,moved,moved,0
+val,frame_002140.png,frame_002140.txt,moved,moved,0
+val,frame_002055.png,frame_002055.txt,moved,moved,0
+val,frame_001576.png,frame_001576.txt,moved,moved,0
+val,frame_002029.png,frame_002029.txt,moved,moved,0
+val,frame_000463.png,frame_000463.txt,moved,moved,0
+val,frame_001759.png,frame_001759.txt,moved,moved,0
+val,frame_000371.png,frame_000371.txt,moved,moved,0
+val,frame_001399.png,frame_001399.txt,moved,moved,0
+val,frame_001062.png,frame_001062.txt,moved,moved,0
+val,frame_001126.png,frame_001126.txt,moved,moved,0
+val,frame_001343 (2).png,frame_001343 (2).txt,moved,moved,0
+val,frame_001788.png,frame_001788.txt,moved,moved,0
+val,frame_000599.png,frame_000599.txt,moved,moved,0
+val,frame_000201.png,frame_000201.txt,moved,moved,0
+val,frame_001904.png,frame_001904.txt,moved,moved,0
+val,frame_000124.png,frame_000124.txt,moved,moved,0
+val,frame_002268.png,frame_002268.txt,moved,moved,0
+val,frame_001320 (2).png,frame_001320 (2).txt,moved,moved,0
+val,frame_000129 (2).png,frame_000129 (2).txt,moved,moved,0
+val,frame_000974.png,frame_000974.txt,moved,moved,0
+val,frame_001115.png,frame_001115.txt,moved,moved,0
+val,frame_001420.png,frame_001420.txt,moved,moved,0
+val,frame_001985 (2).png,frame_001985 (2).txt,moved,moved,0
+val,frame_001813 (2).png,frame_001813 (2).txt,moved,moved,0
+val,frame_001234.png,frame_001234.txt,moved,moved,0
+val,frame_001851.png,frame_001851.txt,moved,moved,0
+val,frame_000655.png,frame_000655.txt,moved,moved,0
+val,frame_002121.png,frame_002121.txt,moved,moved,0
+val,frame_000731.png,frame_000731.txt,moved,moved,0
+val,frame_000307.png,frame_000307.txt,moved,moved,0
+val,frame_000066 (2).png,frame_000066 (2).txt,moved,moved,0
+val,frame_001285 (2).png,frame_001285 (2).txt,moved,moved,0
+val,frame_001284.png,frame_001284.txt,moved,moved,0
+val,frame_001282 (2).png,frame_001282 (2).txt,moved,moved,0
+val,frame_000128.png,frame_000128.txt,moved,moved,0
+val,frame_000218.png,frame_000218.txt,moved,moved,0
+val,frame_001245.png,frame_001245.txt,moved,moved,0
+val,frame_000121 (2).png,frame_000121 (2).txt,moved,moved,0
+val,frame_001182.png,frame_001182.txt,moved,moved,0
+val,frame_001088.png,frame_001088.txt,moved,moved,0
+val,frame_000264 (2).png,frame_000264 (2).txt,moved,moved,0
+val,frame_001617 (2).png,frame_001617 (2).txt,moved,moved,0
+val,frame_000760.png,frame_000760.txt,moved,moved,0
+val,frame_001109.png,frame_001109.txt,moved,moved,0
+val,frame_002476.png,frame_002476.txt,moved,moved,0
+val,frame_002020 (2).png,frame_002020 (2).txt,moved,moved,0
+val,frame_001203.png,frame_001203.txt,moved,moved,0
+val,frame_001703 (2).png,frame_001703 (2).txt,moved,moved,0
+val,frame_002005 (2).png,frame_002005 (2).txt,moved,moved,0
+val,frame_000746 (2).png,frame_000746 (2).txt,moved,moved,0
+val,frame_000095 (2).png,frame_000095 (2).txt,moved,moved,0
+val,frame_000428 (2).png,frame_000428 (2).txt,moved,moved,0
+val,frame_000868.png,frame_000868.txt,moved,moved,0
+val,frame_002406.png,frame_002406.txt,moved,moved,0
+val,frame_001946 (2).png,frame_001946 (2).txt,moved,moved,0
+val,frame_000316.png,frame_000316.txt,moved,moved,0
+val,frame_001171.png,frame_001171.txt,moved,moved,0
+val,frame_001206 (2).png,frame_001206 (2).txt,moved,moved,0
+val,frame_000592 (2).png,frame_000592 (2).txt,moved,moved,0
+val,frame_001480 (2).png,frame_001480 (2).txt,moved,moved,0
+val,frame_001762 (2).png,frame_001762 (2).txt,moved,moved,0
+val,frame_001534.png,frame_001534.txt,moved,moved,0
+val,frame_002237.png,frame_002237.txt,moved,moved,0
+val,frame_000709 (2).png,frame_000709 (2).txt,moved,moved,0
+val,frame_000778.png,frame_000778.txt,moved,moved,0
+val,frame_000735 (2).png,frame_000735 (2).txt,moved,moved,0
+val,frame_001895.png,frame_001895.txt,moved,moved,0
+val,frame_002531.png,frame_002531.txt,moved,moved,0
+val,frame_000837 (2).png,frame_000837 (2).txt,moved,moved,0
+val,frame_000228.png,frame_000228.txt,moved,moved,0
+val,frame_001689.png,frame_001689.txt,moved,moved,0
+val,frame_000639.png,frame_000639.txt,moved,moved,0
+val,frame_000231 (2).png,frame_000231 (2).txt,moved,moved,0
+val,frame_000740 (2).png,frame_000740 (2).txt,moved,moved,0
+val,frame_000828 (2).png,frame_000828 (2).txt,moved,moved,0
+val,frame_001914 (2).png,frame_001914 (2).txt,moved,moved,0
+val,frame_001913.png,frame_001913.txt,moved,moved,0
+val,frame_000180.png,frame_000180.txt,moved,moved,0
+val,frame_001161.png,frame_001161.txt,moved,moved,0
+val,frame_000472.png,frame_000472.txt,moved,moved,0
+val,frame_001417 (2).png,frame_001417 (2).txt,moved,moved,0
+val,frame_001293.png,frame_001293.txt,moved,moved,0
+val,frame_001915.png,frame_001915.txt,moved,moved,0
+val,frame_001706.png,frame_001706.txt,moved,moved,0
+val,frame_002376.png,frame_002376.txt,moved,moved,0
+val,frame_000046.png,frame_000046.txt,moved,moved,0
+val,frame_002064.png,frame_002064.txt,moved,moved,0
+val,frame_000851.png,frame_000851.txt,moved,moved,0
+val,frame_001734.png,frame_001734.txt,moved,moved,0
+val,frame_000840 (2).png,frame_000840 (2).txt,moved,moved,0
+val,frame_001956 (2).png,frame_001956 (2).txt,moved,moved,0
+val,frame_001177.png,frame_001177.txt,moved,moved,0
+val,frame_000741.png,frame_000741.txt,moved,moved,0
+val,frame_000267 (2).png,frame_000267 (2).txt,moved,moved,0
+val,frame_000873 (2).png,frame_000873 (2).txt,moved,moved,0
+val,frame_001169 (2).png,frame_001169 (2).txt,moved,moved,0
+val,frame_001610 (2).png,frame_001610 (2).txt,moved,moved,0
+val,frame_001421 (2).png,frame_001421 (2).txt,moved,moved,0
+val,frame_000093 (2).png,frame_000093 (2).txt,moved,moved,0
+val,frame_001313.png,frame_001313.txt,moved,moved,0
+val,frame_000628.png,frame_000628.txt,moved,moved,0
+val,frame_000490 (2).png,frame_000490 (2).txt,moved,moved,0
+val,frame_000618.png,frame_000618.txt,moved,moved,0
+val,frame_000877.png,frame_000877.txt,moved,moved,0
+val,frame_000733.png,frame_000733.txt,moved,moved,0
+val,frame_001451 (2).png,frame_001451 (2).txt,moved,moved,0
+val,frame_001837.png,frame_001837.txt,moved,moved,0
+val,frame_000584.png,frame_000584.txt,moved,moved,0
+val,frame_001395.png,frame_001395.txt,moved,moved,0
+val,frame_001662.png,frame_001662.txt,moved,moved,0
+val,frame_001692.png,frame_001692.txt,moved,moved,0
+val,frame_000450.png,frame_000450.txt,moved,moved,0
+val,frame_001007 (2).png,frame_001007 (2).txt,moved,moved,0
+val,frame_000717 (2).png,frame_000717 (2).txt,moved,moved,0
+val,frame_001544.png,frame_001544.txt,moved,moved,0
+val,frame_001034.png,frame_001034.txt,moved,moved,0
+val,frame_000737.png,frame_000737.txt,moved,moved,0
+val,frame_001296.png,frame_001296.txt,moved,moved,0
+val,frame_000088 (2).png,frame_000088 (2).txt,moved,moved,0
+val,frame_001311 (2).png,frame_001311 (2).txt,moved,moved,0
+val,frame_000262.png,frame_000262.txt,moved,moved,0
+val,frame_001116.png,frame_001116.txt,moved,moved,0
+val,frame_002035.png,frame_002035.txt,moved,moved,0
+val,frame_000269 (2).png,frame_000269 (2).txt,moved,moved,0
+val,frame_001963.png,frame_001963.txt,moved,moved,0
+val,frame_001557.png,frame_001557.txt,moved,moved,0
+val,frame_001158 (2).png,frame_001158 (2).txt,moved,moved,0
+val,frame_001058 (2).png,frame_001058 (2).txt,moved,moved,0
+val,frame_001515 (2).png,frame_001515 (2).txt,moved,moved,0
+val,frame_002399.png,frame_002399.txt,moved,moved,0
+val,frame_002036.png,frame_002036.txt,moved,moved,0
+val,frame_000339.png,frame_000339.txt,moved,moved,0
+val,frame_000867 (2).png,frame_000867 (2).txt,moved,moved,0
+val,frame_001929.png,frame_001929.txt,moved,moved,0
+val,frame_000317.png,frame_000317.txt,moved,moved,0
+val,frame_001462.png,frame_001462.txt,moved,moved,0
+val,frame_000281 (2).png,frame_000281 (2).txt,moved,moved,0
+val,frame_000594 (2).png,frame_000594 (2).txt,moved,moved,0
+val,frame_001074.png,frame_001074.txt,moved,moved,0
+val,frame_001343.png,frame_001343.txt,moved,moved,0
+val,frame_001769 (2).png,frame_001769 (2).txt,moved,moved,0
+val,frame_002231.png,frame_002231.txt,moved,moved,0
+val,frame_000254.png,frame_000254.txt,moved,moved,0
+val,frame_000130 (2).png,frame_000130 (2).txt,moved,moved,0
+val,frame_002362.png,frame_002362.txt,moved,moved,0
+val,frame_000378 (2).png,frame_000378 (2).txt,moved,moved,0
+val,frame_001698 (2).png,frame_001698 (2).txt,moved,moved,0
+val,frame_001232.png,frame_001232.txt,moved,moved,0
+val,frame_001958.png,frame_001958.txt,moved,moved,0
+val,frame_002079.png,frame_002079.txt,moved,moved,0
+val,frame_000467 (2).png,frame_000467 (2).txt,moved,moved,0
+val,frame_000968 (2).png,frame_000968 (2).txt,moved,moved,0
+val,frame_001614.png,frame_001614.txt,moved,moved,0
+val,frame_000152 (2).png,frame_000152 (2).txt,moved,moved,0
+val,frame_001103 (2).png,frame_001103 (2).txt,moved,moved,0
+val,frame_002689.png,frame_002689.txt,moved,moved,0
+val,frame_000064 (2).png,frame_000064 (2).txt,moved,moved,0
+val,frame_000751.png,frame_000751.txt,moved,moved,0
+val,frame_002078.png,frame_002078.txt,moved,moved,0
+val,frame_001582 (2).png,frame_001582 (2).txt,moved,moved,0
+val,frame_001435.png,frame_001435.txt,moved,moved,0
+val,frame_002430.png,frame_002430.txt,moved,moved,0
+val,frame_000612.png,frame_000612.txt,moved,moved,0
+val,frame_000066.png,frame_000066.txt,moved,moved,0
+val,frame_002646.png,frame_002646.txt,moved,moved,0
+val,frame_000086 (2).png,frame_000086 (2).txt,moved,moved,0
+val,frame_001847 (2).png,frame_001847 (2).txt,moved,moved,0
+val,frame_000254 (2).png,frame_000254 (2).txt,moved,moved,0
+val,frame_001189 (2).png,frame_001189 (2).txt,moved,moved,0
+val,frame_001673.png,frame_001673.txt,moved,moved,0
+val,frame_001769.png,frame_001769.txt,moved,moved,0
+val,frame_000473 (2).png,frame_000473 (2).txt,moved,moved,0
+val,frame_000975.png,frame_000975.txt,moved,moved,0
+val,frame_000627.png,frame_000627.txt,moved,moved,0
+val,frame_002281.png,frame_002281.txt,moved,moved,0
+val,frame_000284.png,frame_000284.txt,moved,moved,0
+val,frame_000548.png,frame_000548.txt,moved,moved,0
+val,frame_000972.png,frame_000972.txt,moved,moved,0
+val,frame_001973.png,frame_001973.txt,moved,moved,0
+val,frame_001209.png,frame_001209.txt,moved,moved,0
+val,frame_002492.png,frame_002492.txt,moved,moved,0
+val,frame_002041.png,frame_002041.txt,moved,moved,0
+val,frame_001280 (2).png,frame_001280 (2).txt,moved,moved,0
+val,frame_000548 (2).png,frame_000548 (2).txt,moved,moved,0
+val,frame_000169.png,frame_000169.txt,moved,moved,0
+val,frame_001477 (2).png,frame_001477 (2).txt,moved,moved,0
+val,frame_001486.png,frame_001486.txt,moved,moved,0
+val,frame_002565.png,frame_002565.txt,moved,moved,0
+val,frame_000091.png,frame_000091.txt,moved,moved,0
+val,frame_000867.png,frame_000867.txt,moved,moved,0
+val,frame_001738 (2).png,frame_001738 (2).txt,moved,moved,0
+val,frame_000882 (2).png,frame_000882 (2).txt,moved,moved,0
+val,frame_002523.png,frame_002523.txt,moved,moved,0
+val,frame_000213 (2).png,frame_000213 (2).txt,moved,moved,0
+val,frame_000242.png,frame_000242.txt,moved,moved,0
+val,frame_002372.png,frame_002372.txt,moved,moved,0
+val,frame_000319 (2).png,frame_000319 (2).txt,moved,moved,0
+val,frame_002426.png,frame_002426.txt,moved,moved,0
+val,frame_002119.png,frame_002119.txt,moved,moved,0
+val,frame_001576 (2).png,frame_001576 (2).txt,moved,moved,0
+val,frame_000734 (2).png,frame_000734 (2).txt,moved,moved,0
+val,frame_001081.png,frame_001081.txt,moved,moved,0
+val,frame_000809.png,frame_000809.txt,moved,moved,0
+val,frame_000129.png,frame_000129.txt,moved,moved,0
+val,frame_000482.png,frame_000482.txt,moved,moved,0
+val,frame_000527.png,frame_000527.txt,moved,moved,0
+val,frame_000039.png,frame_000039.txt,moved,moved,0
+val,frame_000238 (2).png,frame_000238 (2).txt,moved,moved,0
+val,frame_000369 (2).png,frame_000369 (2).txt,moved,moved,0
+val,frame_001754.png,frame_001754.txt,moved,moved,0
+val,frame_000827 (2).png,frame_000827 (2).txt,moved,moved,0
+val,frame_000037.png,frame_000037.txt,moved,moved,0
+val,frame_000546 (2).png,frame_000546 (2).txt,moved,moved,0
+val,frame_001849.png,frame_001849.txt,moved,moved,0
+val,frame_000545 (2).png,frame_000545 (2).txt,moved,moved,0
+val,frame_001378.png,frame_001378.txt,moved,moved,0
+val,frame_002282.png,frame_002282.txt,moved,moved,0
+val,frame_000833 (2).png,frame_000833 (2).txt,moved,moved,0
+val,frame_001393.png,frame_001393.txt,moved,moved,0
+val,frame_001016 (2).png,frame_001016 (2).txt,moved,moved,0
+val,frame_002011 (2).png,frame_002011 (2).txt,moved,moved,0
+val,frame_000335 (2).png,frame_000335 (2).txt,moved,moved,0
+val,frame_001959 (2).png,frame_001959 (2).txt,moved,moved,0
+val,frame_002016 (2).png,frame_002016 (2).txt,moved,moved,0
+val,frame_002420.png,frame_002420.txt,moved,moved,0
+val,frame_000726 (2).png,frame_000726 (2).txt,moved,moved,0
+val,frame_002070.png,frame_002070.txt,moved,moved,0
+val,frame_000432 (2).png,frame_000432 (2).txt,moved,moved,0
+val,frame_001750.png,frame_001750.txt,moved,moved,0
+val,frame_001515.png,frame_001515.txt,moved,moved,0
+val,frame_000565.png,frame_000565.txt,moved,moved,0
+val,frame_001222.png,frame_001222.txt,moved,moved,0
+val,frame_000574 (2).png,frame_000574 (2).txt,moved,moved,0
+val,frame_001577.png,frame_001577.txt,moved,moved,0
+val,frame_001836 (2).png,frame_001836 (2).txt,moved,moved,0
+val,frame_002506.png,frame_002506.txt,moved,moved,0
+val,frame_000240.png,frame_000240.txt,moved,moved,0
+val,frame_001057 (2).png,frame_001057 (2).txt,moved,moved,0
+val,frame_002693.png,frame_002693.txt,moved,moved,0
+val,frame_001758 (2).png,frame_001758 (2).txt,moved,moved,0
+val,frame_001862.png,frame_001862.txt,moved,moved,0
+val,frame_001092 (2).png,frame_001092 (2).txt,moved,moved,0
+val,frame_002393.png,frame_002393.txt,moved,moved,0
+val,frame_000578.png,frame_000578.txt,moved,moved,0
+val,frame_000441.png,frame_000441.txt,moved,moved,0
+val,frame_001329.png,frame_001329.txt,moved,moved,0
+val,frame_000720.png,frame_000720.txt,moved,moved,0
+val,frame_000858.png,frame_000858.txt,moved,moved,0
+val,frame_001837 (2).png,frame_001837 (2).txt,moved,moved,0
+val,frame_001373.png,frame_001373.txt,moved,moved,0
+val,frame_002669.png,frame_002669.txt,moved,moved,0
+val,frame_001307.png,frame_001307.txt,moved,moved,0
+val,frame_001153.png,frame_001153.txt,moved,moved,0
+val,frame_000141 (2).png,frame_000141 (2).txt,moved,moved,0
+val,frame_000263 (2).png,frame_000263 (2).txt,moved,moved,0
+val,frame_001289.png,frame_001289.txt,moved,moved,0
+val,frame_000825.png,frame_000825.txt,moved,moved,0
+val,frame_000362.png,frame_000362.txt,moved,moved,0
+val,frame_001682.png,frame_001682.txt,moved,moved,0
+val,frame_000502 (2).png,frame_000502 (2).txt,moved,moved,0
+val,frame_002551.png,frame_002551.txt,moved,moved,0
+val,frame_000220 (2).png,frame_000220 (2).txt,moved,moved,0
+val,frame_001270.png,frame_001270.txt,moved,moved,0
+val,frame_000936.png,frame_000936.txt,moved,moved,0
+val,frame_002013 (2).png,frame_002013 (2).txt,moved,moved,0
+val,frame_001586.png,frame_001586.txt,moved,moved,0
+val,frame_000212 (2).png,frame_000212 (2).txt,moved,moved,0
+val,frame_002168.png,frame_002168.txt,moved,moved,0
+val,frame_001810.png,frame_001810.txt,moved,moved,0
+val,frame_000143 (2).png,frame_000143 (2).txt,moved,moved,0
+val,frame_001154.png,frame_001154.txt,moved,moved,0
+val,frame_001900.png,frame_001900.txt,moved,moved,0
+val,frame_000047.png,frame_000047.txt,moved,moved,0
+val,frame_000395.png,frame_000395.txt,moved,moved,0
+val,frame_001988 (2).png,frame_001988 (2).txt,moved,moved,0
+val,frame_001642 (2).png,frame_001642 (2).txt,moved,moved,0
+val,frame_000989.png,frame_000989.txt,moved,moved,0
+val,frame_000337.png,frame_000337.txt,moved,moved,0
+val,frame_000719.png,frame_000719.txt,moved,moved,0
+val,frame_000981 (2).png,frame_000981 (2).txt,moved,moved,0
+val,frame_001925 (2).png,frame_001925 (2).txt,moved,moved,0
+val,frame_001632.png,frame_001632.txt,moved,moved,0
+val,frame_001849 (2).png,frame_001849 (2).txt,moved,moved,0
+val,frame_000414.png,frame_000414.txt,moved,moved,0
+val,frame_001089.png,frame_001089.txt,moved,moved,0
+val,frame_000262 (2).png,frame_000262 (2).txt,moved,moved,0
+val,frame_001200.png,frame_001200.txt,moved,moved,0
+val,frame_001061.png,frame_001061.txt,moved,moved,0
+val,frame_001214.png,frame_001214.txt,moved,moved,0
+val,frame_001745.png,frame_001745.txt,moved,moved,0
+val,frame_001797.png,frame_001797.txt,moved,moved,0
+val,frame_000471 (2).png,frame_000471 (2).txt,moved,moved,0
+val,frame_001969.png,frame_001969.txt,moved,moved,0
+val,frame_000567.png,frame_000567.txt,moved,moved,0
+val,frame_002050.png,frame_002050.txt,moved,moved,0
+val,frame_001703.png,frame_001703.txt,moved,moved,0
+val,frame_002022 (2).png,frame_002022 (2).txt,moved,moved,0
+val,frame_000373 (2).png,frame_000373 (2).txt,moved,moved,0
+val,frame_001361 (2).png,frame_001361 (2).txt,moved,moved,0
+val,frame_001175.png,frame_001175.txt,moved,moved,0
+val,frame_000413.png,frame_000413.txt,moved,moved,0
+val,frame_001185 (2).png,frame_001185 (2).txt,moved,moved,0
+val,frame_000738.png,frame_000738.txt,moved,moved,0
+val,frame_000251 (2).png,frame_000251 (2).txt,moved,moved,0
+val,frame_001063.png,frame_001063.txt,moved,moved,0
+val,frame_001955.png,frame_001955.txt,moved,moved,0
+val,frame_002460.png,frame_002460.txt,moved,moved,0
+val,frame_002345.png,frame_002345.txt,moved,moved,0
+val,frame_000992.png,frame_000992.txt,moved,moved,0
+val,frame_001285.png,frame_001285.txt,moved,moved,0
+val,frame_002181.png,frame_002181.txt,moved,moved,0
+val,frame_001984.png,frame_001984.txt,moved,moved,0
+val,frame_001933 (2).png,frame_001933 (2).txt,moved,moved,0
+val,frame_002664.png,frame_002664.txt,moved,moved,0
+val,frame_001493.png,frame_001493.txt,moved,moved,0
+val,frame_001838 (2).png,frame_001838 (2).txt,moved,moved,0
+val,frame_000983.png,frame_000983.txt,moved,moved,0
+val,frame_000183.png,frame_000183.txt,moved,moved,0
+val,frame_000389 (2).png,frame_000389 (2).txt,moved,moved,0
+val,frame_000814.png,frame_000814.txt,moved,moved,0
+val,frame_002173.png,frame_002173.txt,moved,moved,0
+val,frame_002134.png,frame_002134.txt,moved,moved,0
+val,frame_000581 (2).png,frame_000581 (2).txt,moved,moved,0
+val,frame_001705 (2).png,frame_001705 (2).txt,moved,moved,0
+val,frame_001922.png,frame_001922.txt,moved,moved,0
+val,frame_000379.png,frame_000379.txt,moved,moved,0
+val,frame_000504.png,frame_000504.txt,moved,moved,0
+val,frame_001978.png,frame_001978.txt,moved,moved,0
+val,frame_001801 (2).png,frame_001801 (2).txt,moved,moved,0
+val,frame_001987.png,frame_001987.txt,moved,moved,0
+val,frame_000205.png,frame_000205.txt,moved,moved,0
+val,frame_002262.png,frame_002262.txt,moved,moved,0
+val,frame_000846 (2).png,frame_000846 (2).txt,moved,moved,0
+val,frame_002071.png,frame_002071.txt,moved,moved,0
+val,frame_001926.png,frame_001926.txt,moved,moved,0
+val,frame_001401.png,frame_001401.txt,moved,moved,0
+val,frame_002493.png,frame_002493.txt,moved,moved,0
+val,frame_000045.png,frame_000045.txt,moved,moved,0
+val,frame_002473.png,frame_002473.txt,moved,moved,0

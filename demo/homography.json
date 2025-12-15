@@ -1,0 +1,39 @@
+{
+  "coordinate_system": "centered_length_axis",
+  "grid_step_yards": 5,
+  "goal_x": 50.0,
+  "end_x": 60.0,
+  "H": [
+    [
+      0.4073363626724411,
+      -0.3944649824473568,
+      -785.0503333614914
+    ],
+    [
+      0.2974525643520966,
+      -1.2147342964059624,
+      692.4215062591644
+    ],
+    [
+      0.0003138835543247775,
+      0.0024390151557579583,
+      1.0
+    ]
+  ],
+  "scale": 10.0,
+  "field_w": 53.3,
+  "images_used": [
+    "C:\\Users\\Tolu\\Documents\\vs_code\\cv_demo\\at-it6\\data\\images\\train\\frame_000880.png",
+    "C:\\Users\\Tolu\\Documents\\vs_code\\cv_demo\\at-it6\\data\\images\\train\\frame_002282.png",
+    "C:\\Users\\Tolu\\Documents\\vs_code\\cv_demo\\at-it6\\data\\images\\train\\frame_000575.png",
+    "C:\\Users\\Tolu\\Documents\\vs_code\\cv_demo\\at-it6\\data\\images\\train\\frame_001935.png",
+    "C:\\Users\\Tolu\\Documents\\vs_code\\cv_demo\\at-it6\\data\\images\\train\\frame_000539.png"
+  ],
+  "num_correspondences": 37,
+  "conversions": {
+    "centered_to_abs120": "x_abs = x_centered + 60.0",
+    "abs120_to_centered": "x_centered = x_abs - 60.0",
+    "centered_to_play100": "x_play = x_centered + 50.0",
+    "play100_to_centered": "x_centered = x_play - 50.0"
+  }
+}
