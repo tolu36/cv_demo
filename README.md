@@ -1,8 +1,10 @@
-# CV Demo (QB Detection & KPIs)
+# QB Detection & KPIs (YOLO Pipeline)
 
-This repo hosts a YOLO-based pipeline to detect defenders/QB/ball/receivers, specialize on the ball, and compute simple QB KPIs. Two main roots: `at-it6` for datasets/configs and `demo` for training/inference scripts plus outputs.
+This repo contains a YOLO-based pipeline to detect defenders/QB/ball/receivers, run a ball specialist, and compute basic QB KPIs. Code lives in `demo/`, while datasets/config live in `at-it6/`.
 
-## Layout
+If you just want to run inference with the best models, start with **Quickstart (Best Models)** below.
+
+## Repo Layout (short)
 - at-it6/
   - data.yaml, data*.yaml: YOLO configs (paths currently point to this folder on Windows).
   - data/: full-frame YOLO dataset (`images/{train,val,train_oversampled,_dropped}`, `labels/{train,val,train_oversampled,_orphaned}`).
@@ -10,6 +12,7 @@ This repo hosts a YOLO-based pipeline to detect defenders/QB/ball/receivers, spe
   - ball_crops/, ball_crops_aug/: legacy cropped/augmented ball patch sets.
   - split_strict_log_*.csv, train.txt: split audit logs and image list.
 - demo/
+  - best_models/: curated best weights for sharing/repro (`ball_specialist_best.pt`, `general_players_ball_best.pt`).
   - data.yaml + train.txt: training list for the full model.
   - train.py: train the 4-class full-frame model on `at-it6/data`.
   - train_ball.py: two-stage fine-tune of the ball patch specialist (defaults to resume from `runs/detect/.../best.pt`).
@@ -28,22 +31,32 @@ This repo hosts a YOLO-based pipeline to detect defenders/QB/ball/receivers, spe
   - yolov8*/yolo11n.pt: base checkpoints; `runs/` and `pred_vis*` are model outputs (gitignored).
 - .gitignore: keeps data, runs, weights, and large blobs out of git.
 
-## Data & weights to restore
+## Best Models (curated)
+The current best weights are hosted on Google Drive (selected by highest final mAP50-95 in `results.csv`).
+Request access if needed:
+```
+https://drive.google.com/drive/folders/1Y0he9NJhIuzeVqcaVsOzFTNKy9VpK3Nu?usp=sharing
+```
+
+If you want to use different runs, edit paths in the scripts.
+
+## Quickstart (Best Models)
+1) Create a Python env and install deps:
+   - `python -m venv .venv && .\.venv\Scripts\activate`
+   - `pip install -U ultralytics torch torchvision torchaudio opencv-python-headless pandas numpy matplotlib pillow pyyaml`
+2) Put inference images in a folder, e.g. `C:\data\frames`.
+3) Run combined inference:
+   - `python demo/predict_combo.py --images C:\data\frames --out demo\pred_vis_combo`
+4) (Optional) KPIs: run `python demo/ensemble_track_kpis.py` after `predict_combo.py`.
+
+Notes:
+- Run scripts from the repo root or `demo/`. Relative paths assume `demo/` sits next to `at-it6/`.
+- `demo/pred_vis*` and `demo/runs/` are outputs and are ignored by git.
+
+## Training / Reproduction (full)
 - Populate `at-it6/data` with YOLO-format images/labels; class map is `{0: Defender, 1: QB, 2: Ball, 3: Receiver}`. Update `data.yaml` paths if you are not on Windows or the root changes.
 - For the patch pipeline, ensure `at-it6/data/ball_patches` exists (run `make_ball_only_ds.py` + `ball_jitter.py` and optionally `mine_hard_negs.py`/`add_background_patch.py`).
-- Provide trained weights or edit paths in scripts:
-  - General model default: `demo/runs/detect/qbcv_v8x_ballfocus_p23/weights/best.pt`.
-  - Ball specialist default: `demo/runs/detect/ball_patches_l_p2_tinyobj_1024_lr5e-4_nomosaic_coslr_w5_ls0012/weights/best.pt`.
+- Train full model: `python demo/train.py`.
+- Build/refresh ball patches: `python demo/make_ball_only_ds.py` -> `python demo/ball_jitter.py` -> optionally `python demo/mine_hard_negs.py --weights <full_best.pt> --conf 0.25 --iou 0.60 --tp_iou 0.20 --max_per_image 3 --limit 1500 --imgsz 1536` -> `python demo/add_background_patch.py`.
+- Train specialist: adjust `RESUME_WEIGHTS`/`USE_RESUME` in `demo/train_ball.py` then run `python demo/train_ball.py`.
 - Optional: `demo/homography.json` with `H` matrix and `scale_px_per_yd` for KPI projection.
-
-## Quickstart
-1) Python env: `python -m venv .venv && .\.venv\Scripts\activate` then `pip install -U ultralytics torch torchvision torchaudio opencv-python-headless pandas numpy matplotlib pillow pyyaml`.
-2) Place data under `at-it6/data` (and `data/ball_patches` if using the specialist); fix `data.yaml`/`ball_patches.yaml` paths if needed.
-3) Train full model: `python demo/train.py`.
-4) Build/refresh ball patches: `python demo/make_ball_only_ds.py` -> `python demo/ball_jitter.py` -> optionally `python demo/mine_hard_negs.py --weights <full_best.pt> --conf 0.25 --iou 0.60 --tp_iou 0.20 --max_per_image 3 --limit 1500 --imgsz 1536` -> `python demo/add_background_patch.py`.
-5) Train specialist: adjust `RESUME_WEIGHTS`/`USE_RESUME` in `demo/train_ball.py` then run `python demo/train_ball.py`.
-6) Run combined inference: `python demo/predict_combo.py --images <folder> --out demo/pred_vis_combo`.
-7) Track + KPIs: `python demo/ensemble_track_kpis.py` (uses detections_combo.csv; uses homography.json if present).
-8) One-shot runner: `python demo/run_ball_pipeline.py` from `demo/` to execute the scripted steps.
-
-Notes: Run scripts from the `demo` folder so relative `../at-it6` paths resolve; Ultralytics will write outputs under `demo/runs/` and `demo/pred_vis*` which are ignored by git.

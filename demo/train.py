@@ -54,6 +54,25 @@ device = 0 if (torch.cuda.is_available() and torch.cuda.device_count() >= 1) els
 print("Using device:", device)
 
 # initial training model config
+
+# %%
+# training ball focus model
+# --- try to load x-p2 weights; fallback to YAML + seed with yolov8x.pt ---
+# weights = "yolov8x-p2.pt"
+# try:
+#     model = YOLO(weights)
+#     print(f"Loaded weights: {weights}")
+# except Exception as e:
+#     print(
+#         f"Could not load '{weights}' ({e}). Building P2 model from YAML and seeding with yolov8x.pt..."
+#     )
+#     # Build P2 architecture; seed from x weights (partial transfer is expected)
+#     model = YOLO("yolov8x-p2.yaml")
+#     # If you don't have yolov8x.pt locally Ultralytics will auto-download it
+#     model.load(
+#         "yolov8x.pt"
+#     )  # partial load -> you'll see "Transferred N/M items" message
+
 # model.train(
 #     data=DATA_YAML,
 #     epochs=150,
@@ -66,48 +85,77 @@ print("Using device:", device)
 #     name="qbcv_yolov8x_1536",
 #     patience=25,
 # )
+
+# model.train(
+#     data=DATA_YAML,
+#     epochs=200,
+#     patience=40,
+#     imgsz=1536,  # try 1536 later (batch=1) if stable
+#     batch=1,  # explicit to avoid OOM during autobatch probing
+#     device=device,
+#     workers=0,  # Windows-stable
+#     cache="disk",
+#     amp=True,
+#     # — small-object–friendly augs —
+#     mosaic=0.5,
+#     close_mosaic=10,
+#     copy_paste=0.5,
+#     mixup=0.1,
+#     scale=0.5,  # limit downscaling (range 0.5..1.0)
+#     hsv_h=0.015,
+#     hsv_s=0.5,
+#     hsv_v=0.5,
+#     fliplr=0.5,
+#     flipud=0.0,
+#     degrees=0.0,
+#     translate=0.1,
+#     shear=0.0,
+#     # ————————————————
+#     name="qbcv_v8x_ballfocus_p2",
+# )
+
 # %%
-# training ball focus model
-# --- try to load x-p2 weights; fallback to YAML + seed with yolov8x.pt ---
-weights = "yolov8x-p2.pt"
-try:
-    model = YOLO(weights)
-    print(f"Loaded weights: {weights}")
-except Exception as e:
-    print(
-        f"Could not load '{weights}' ({e}). Building P2 model from YAML and seeding with yolov8x.pt..."
-    )
-    # Build P2 architecture; seed from x weights (partial transfer is expected)
-    model = YOLO("yolov8x-p2.yaml")
-    # If you don't have yolov8x.pt locally Ultralytics will auto-download it
-    model.load(
-        "yolov8x.pt"
-    )  # partial load -> you'll see "Transferred N/M items" message
+# === IMPORTANT: update your data.yaml temporarily to drop the Ball class for this run ===
+# Option A: make a copy 'data_players.yaml' with only classes {0: Defender, 1: QB, 3: Receiver}
+# and relabel 'Ball' (2) as 'ignore' (remove those rows) in labels or map 2->background beforehand.
+# Option B (quick): keep labels as-is but pass 'classes=[0,1,3]' to train() so Ball is ignored at training time.
+
+weights = "yolov8x.pt"  # no -p2 needed for players
+model = YOLO(weights)
+
+device = 0 if (torch.cuda.is_available() and torch.cuda.device_count() >= 1) else "cpu"
 
 model.train(
     data=DATA_YAML,
-    epochs=200,
-    patience=40,
-    imgsz=1536,  # try 1536 later (batch=1) if stable
-    batch=1,  # explicit to avoid OOM during autobatch probing
+    classes=[0, 1, 3],  # train on players only; ignores Ball (2)
+    imgsz=1536,  # 1280–1600 is a good band for players
+    batch=2,  # fix this for Windows stability; raise if VRAM allows
+    epochs=220,
+    patience=50,
     device=device,
-    workers=0,  # Windows-stable
+    workers=0,
     cache="disk",
     amp=True,
-    # — small-object–friendly augs —
-    mosaic=0.5,
+    # stronger augs are ok for players
+    mosaic=0.4,
     close_mosaic=10,
-    copy_paste=0.5,
-    mixup=0.1,
-    scale=0.5,  # limit downscaling (range 0.5..1.0)
+    mixup=0.15,
+    copy_paste=0.25,
+    scale=0.9,  # allow upscaling (players are not tiny)
+    degrees=5.0,
+    translate=0.10,
+    shear=1.0,
+    perspective=0.000,
     hsv_h=0.015,
-    hsv_s=0.5,
-    hsv_v=0.5,
+    hsv_s=0.6,
+    hsv_v=0.6,
     fliplr=0.5,
     flipud=0.0,
-    degrees=0.0,
-    translate=0.1,
-    shear=0.0,
-    # ————————————————
-    name="qbcv_v8x_ballfocus_p2",
+    optimizer="AdamW",
+    lr0=0.006,
+    lrf=0.02,
+    cos_lr=True,
+    weight_decay=0.05,
+    warmup_epochs=3,
+    name="players_v8x_1536_adamw",
 )

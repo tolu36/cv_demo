@@ -33,6 +33,7 @@ pred_vis_combo/
 *.zip
 *.rar
 *.7z
+
 *.txt
 
 # Images and large blobs (optional: keep sample images elsewhere)

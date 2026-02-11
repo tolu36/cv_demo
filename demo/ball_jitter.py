@@ -15,7 +15,7 @@ for d in [*IM_PATCH.values(), *LB_PATCH.values()]:
     os.makedirs(d, exist_ok=True)
 
 # ----- toggle: tighten jitter/centering when chasing precision -----
-TIGHT_JITTER = False  # set True to use tighter jitter (J=0.15, margin=0.10)
+TIGHT_JITTER = True  # set True to use tighter jitter (J=0.15, margin=0.10)
 
 # ----- config -----
 BALL_ID_FULL = 2

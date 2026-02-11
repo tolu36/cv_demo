@@ -13,6 +13,11 @@ torch.backends.cudnn.allow_tf32 = True
 device = 0 if (torch.cuda.is_available() and torch.cuda.device_count() >= 1) else "cpu"
 print("Using device:", device)
 
+# Precision bias knobs
+USE_FOCAL = False
+FOCAL_GAMMA = 1.5
+LABEL_SMOOTHING = 0.01
+
 def build_preferred_model():
     """Prefer x-P2 backbone (more capacity for recall). Fallbacks are handled locally."""
     try:
@@ -74,7 +79,7 @@ def tinyobj_train_args(imgsz=1024, run_name_suffix="1024"):
         weight_decay=5e-4,
         cos_lr=True,
         warmup_epochs=5,
-        label_smoothing=0.01,
+        label_smoothing=LABEL_SMOOTHING,
         # Augs (gentle for tiny objs)
         mosaic=0.0,
         close_mosaic=10,
@@ -90,8 +95,8 @@ def tinyobj_train_args(imgsz=1024, run_name_suffix="1024"):
         hsv_v=0.4,
         fliplr=0.25,
         flipud=0.0,
-        # (Optional) try focal if class imbalance FNs persist:
-        # fl_gamma=1.5,
+        # Focal can lift recall; keep off for precision-focused runs.
+        **({"fl_gamma": FOCAL_GAMMA} if USE_FOCAL else {}),
         name=f"ball_patches_l_p2_tinyobj_{run_name_suffix}_lr5e-4_nomosaic_coslr_w5_ls001",
     )
 
@@ -107,7 +112,9 @@ def safe_scalar(x, default=0.0):
         return float(default)
 
 
-def quick_val_scan(model, imgsz=1024, iou=0.60, confs=(0.20, 0.25, 0.30, 0.40)):
+def quick_val_scan(
+    model, imgsz=1024, iou=0.60, confs=(0.25, 0.35, 0.45, 0.55)
+):
     print("\n[PR scan over confidence thresholds]")
     rows = []
     for c in confs:

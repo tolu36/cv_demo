@@ -11,7 +11,7 @@ Outputs:
 """
 
 from ultralytics import YOLO
-import os, glob, warnings, argparse
+import os, glob, warnings, argparse, csv
 import torch
 import cv2
 import pandas as pd
@@ -43,7 +43,7 @@ GENERAL_WEIGHTS = os.path.join(
     "best.pt",
 )
 
-# Ball specialist at 1024 (latest complete run)
+# Ball specialist at 1024 (fallback if auto-pick fails)
 BALL_WEIGHTS = os.path.join(
     PROJECT_ROOT,
     "demo",
@@ -53,6 +53,10 @@ BALL_WEIGHTS = os.path.join(
     "weights",
     "best.pt",
 )
+
+# Auto-pick best ball specialist based on results.csv (optional)
+AUTO_PICK_BALL_WEIGHTS = True
+BALL_RUN_PREFIXES = ("ball_patches_", "ball_crops_", "ball_specialist")
 
 # Image directory (try _dropped fallback to val)
 IMG_DIR_A = os.path.join(PROJECT_ROOT, "at-it6", "data", "images", "_dropped")
@@ -64,16 +68,17 @@ OUT_VIS = os.path.join(OUT_DIR, "vis")
 os.makedirs(OUT_VIS, exist_ok=True)
 
 # ---- thresholds / sizing ----
-# Use earlier PR scan guidance and increase imgsz so the ball gets enough pixels
+# Precision-biased defaults to reduce false positives.
 GEN_CONF, GEN_IOU, GEN_IMGSZ = 0.30, 0.50, 1536
-BALL_CONF, BALL_IOU, BALL_IMGSZ = 0.25, 0.50, 1536
-BALL_TTA = True  # enable simple TTA for specialist (scales/flips)
-FALLBACK_GENERAL_BALL = True  # if specialist finds none, keep general's ball detections
+BALL_CONF, BALL_IOU, BALL_IMGSZ = 0.35, 0.50, 1536
+BALL_TTA = False  # disable TTA to reduce spurious detections
+FALLBACK_GENERAL_BALL = False  # don't borrow general model balls by default
+MERGE_GENERAL_BALL = False  # don't union general+specialist ball by default
 
-# Optional tile-based inference for ball specialist to boost recall
-BALL_TILE = True
+# Optional tile-based inference for ball specialist (off by default for precision)
+BALL_TILE = False
 BALL_TILE_SIZE = 1024
-BALL_TILE_OVERLAP = 0.30  # 30% overlap to avoid edge misses
+BALL_TILE_OVERLAP = 0.25  # lighter overlap if tiles are enabled
 
 # ---- class map/colors ----
 # Full model classes: {0: Defender, 1: QB, 2: Ball, 3: Receiver}
@@ -83,6 +88,60 @@ COLORS = {0: (255, 160, 60), 1: (60, 160, 255), 2: (60, 255, 80), 3: (255, 80, 1
 
 def parse_bool(x: str) -> bool:
     return str(x).lower() in {"1", "true", "yes", "y", "on"}
+
+
+def pick_best_ball_weights(root_dir, prefixes):
+    if not os.path.isdir(root_dir):
+        return None
+
+    pref_cols = [
+        "metrics/mAP50-95(B)",
+        "metrics/mAP50-95",
+        "metrics/mAP50(B)",
+        "metrics/mAP50",
+    ]
+    best = None
+    for name in os.listdir(root_dir):
+        if not name.startswith(prefixes):
+            continue
+        run_dir = os.path.join(root_dir, name)
+        if not os.path.isdir(run_dir):
+            continue
+        pt = os.path.join(run_dir, "weights", "best.pt")
+        res = os.path.join(run_dir, "results.csv")
+        if not (os.path.isfile(pt) and os.path.isfile(res)):
+            continue
+        try:
+            with open(res, "r", newline="", encoding="utf-8") as f:
+                rows = list(csv.DictReader(f))
+        except Exception:
+            continue
+        if not rows:
+            continue
+        col = next((c for c in pref_cols if c in rows[0]), None)
+        if not col:
+            continue
+        vals = []
+        for r in rows:
+            try:
+                vals.append(float(r.get(col, "")))
+            except Exception:
+                pass
+        if not vals:
+            continue
+        best_val = max(vals)
+        if (best is None) or (best_val > best["value"]):
+            best = {"value": best_val, "pt": pt}
+    return best["pt"] if best else None
+
+
+# Override ball weights if auto-pick is enabled and a better run is found.
+if AUTO_PICK_BALL_WEIGHTS:
+    auto_pt = pick_best_ball_weights(
+        os.path.join(PROJECT_ROOT, "demo", "runs", "detect"), BALL_RUN_PREFIXES
+    )
+    if auto_pt:
+        BALL_WEIGHTS = auto_pt
 
 
 def run():
@@ -100,6 +159,7 @@ def run():
     ap.add_argument("--ball_tile_size", type=int, default=BALL_TILE_SIZE)
     ap.add_argument("--ball_tile_overlap", type=float, default=BALL_TILE_OVERLAP)
     ap.add_argument("--fallback_general_ball", type=str, default=str(FALLBACK_GENERAL_BALL))
+    ap.add_argument("--merge_general_ball", type=str, default=str(MERGE_GENERAL_BALL))
     args = ap.parse_args()
 
     images_dir = args.images
@@ -114,6 +174,7 @@ def run():
     ball_tile_size = args.ball_tile_size
     ball_tile_overlap = args.ball_tile_overlap
     fallback_general_ball = parse_bool(args.fallback_general_ball)
+    merge_general_ball = parse_bool(args.merge_general_ball)
     device = 0 if (torch.cuda.is_available() and torch.cuda.device_count() >= 1) else "cpu"
     print("Using device:", device)
     print("General:", GENERAL_WEIGHTS)
@@ -225,6 +286,8 @@ def run():
         g_xyxy = np.zeros((0, 4), dtype=np.float32)
         g_cls = np.zeros((0,), dtype=np.int32)
         g_conf = np.zeros((0,), dtype=np.float32)
+        g_ball_xyxy = np.zeros((0, 4), dtype=np.float32)
+        g_ball_conf = np.zeros((0,), dtype=np.float32)
         if gres.boxes is not None and len(gres.boxes) > 0:
             gx_all = gres.boxes.xyxy.cpu().numpy().astype(np.float32)
             gc_all = gres.boxes.cls.cpu().numpy().astype(np.int32)
@@ -242,6 +305,10 @@ def run():
                 gx, gc, gs = gx[mask], gc[mask], gs[mask]
 
             g_xyxy, g_cls, g_conf = gx, gc, gs
+            mask_ball = gc_all == 2
+            if mask_ball.any():
+                g_ball_xyxy = gx_all[mask_ball]
+                g_ball_conf = gs_all[mask_ball]
 
         # Ball from specialist: class 0 -> remap to class 2
         b_xyxy = np.zeros((0, 4), dtype=np.float32)
@@ -319,23 +386,24 @@ def run():
                 b_xyxy = bx
                 b_cls = np.full((bx.shape[0],), 2, dtype=np.int32)
                 b_conf = bs
+
+        # Merge general model ball detections for recall (optional)
+        if merge_general_ball and g_ball_xyxy.size:
+            if b_xyxy.size:
+                comb_xyxy = np.vstack([b_xyxy, g_ball_xyxy])
+                comb_conf = np.concatenate([b_conf, g_ball_conf])
+            else:
+                comb_xyxy = g_ball_xyxy
+                comb_conf = g_ball_conf
+            keep = nms_boxes(comb_xyxy, comb_conf, iou_thr=ball_iou)
+            b_xyxy = comb_xyxy[keep]
+            b_conf = comb_conf[keep]
+            b_cls = np.full((b_xyxy.shape[0],), 2, dtype=np.int32)
         # Fallback: if specialist found none, optionally include general model's ball detections
-        if fallback_general_ball and (b_xyxy.size == 0) and (
-            gres.boxes is not None and len(gres.boxes) > 0
-        ):
-            # fallback: include general model's ball detections if specialist found none
-            try:
-                # reuse gx_all/gc_all/gs_all if available; else recompute
-                gx_all, gc_all, gs_all
-            except NameError:
-                gx_all = gres.boxes.xyxy.cpu().numpy().astype(np.float32)
-                gc_all = gres.boxes.cls.cpu().numpy().astype(np.int32)
-                gs_all = gres.boxes.conf.cpu().numpy().astype(np.float32)
-            mask_ball = gc_all == 2
-            if mask_ball.any():
-                b_xyxy = gx_all[mask_ball]
-                b_cls = np.full((b_xyxy.shape[0],), 2, dtype=np.int32)
-                b_conf = gs_all[mask_ball]
+        elif fallback_general_ball and (b_xyxy.size == 0) and g_ball_xyxy.size:
+            b_xyxy = g_ball_xyxy
+            b_cls = np.full((b_xyxy.shape[0],), 2, dtype=np.int32)
+            b_conf = g_ball_conf
 
         # Combine
         xyxy = np.vstack([g_xyxy, b_xyxy]) if g_xyxy.size or b_xyxy.size else np.zeros((0, 4))

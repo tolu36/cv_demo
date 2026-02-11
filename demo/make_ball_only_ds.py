@@ -27,7 +27,7 @@ for d in (IMG_T, IMG_V, LB_T, LB_V):
 BALL_ID = 2  # your Ball class id in the full-frame labels
 MARGIN = 3.0  # crop side = MARGIN * max(ball_w_px, ball_h_px)
 SIDE_MIN, SIDE_MAX = 96, 384  # clamp crop side in px (keeps scale reasonable)
-NEGS_PER_POS = 1  # number of negative patches per ball (near negatives)
+NEGS_PER_POS = 2  # number of negative patches per ball (near negatives)
 VAL_FRACTION = 0.2
 RAND = random.Random(42)
 
